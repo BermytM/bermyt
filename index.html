@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дима Родин | Официальный сайт дрифтера</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="hero">
+        <!-- Фото Димы с машиной -->
+        <img src="models/dima2.jpeg" alt="Дима Родин с дрифт-каром" class="hero-bg">
+        <div class="hero-content">
+            <h1>Дима Родин</h1>
+            <div class="tagline">29 лет | Всеволожск</div>
+            <div class="tagline">Зимний дрифт с 2018</div>
+            <a href="sponsor.html" class="btn">Спонсировать проект</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="card">
+            <h2 style="text-align: center;">Моя история</h2>
+            <p>Специализируюсь на зимнем дрифте - это моя стихия. Уже успел заявить о себе:</p>
+            <ul>
+                <li>Призер Winter Training Challenge 2021</li>
+                <li>Победитель Winter Drift Cup 2022</li>
+            </ul>
+            <p>Сейчас работаю над стабильностью результатов для перехода в профессиональную лигу.</p>
+        </div>
+
+        <div class="card">
+            <h2 style="text-align: center;">Это моя Машина</h2>
+            <!-- Заменяем фон на <img> -->
+            <img src="models/sliva4.png" alt="Машина" class="car-image">
+
+            <div class="icons-container">
+                <div class="icon" onclick="toggleInfo('engine')">
+                    <img src="models/eng.png" alt="Engine Icon">
+                </div>
+                <div class="icon" onclick="toggleInfo('transmission')">
+                    <img src="models/tr.png" alt="Transmission Icon">
+                </div>
+                <div class="icon" onclick="toggleInfo('suspension')">
+                    <img src="models/s.png" alt="Suspension Icon">
+                </div>
+                <div class="icon" onclick="toggleInfo('body')">
+                    <img src="models/b.png" alt="Body Icon">
+                </div>
+                <div class="icon" onclick="toggleInfo('wheels')">
+                    <img src="models/w.png" alt="Wheels Icon">
+                </div>
+            </div>
+
+            <div id="engine" class="info-popup">1JZ-GTE VVTI (450+ л.с.)</div>
+            <div id="transmission" class="info-popup">BMW GS6 37DZ</div>
+            <div id="suspension" class="info-popup">D2 Racing Drift</div>
+            <div id="body" class="info-popup">Аэродинамический обвес</div>
+            <div id="wheels" class="info-popup">SSR Professor SP1</div>
+        </div>
+
+        <div class="card" id="events">
+            <h2 style="text-align: center;">Календарь сезона 2023</h2>
+
+            <div class="event">
+                <div class="event-date">6-7 МАЯ</div>
+                <div class="event-title">IGORA DRIVE DRIFT CHALLENGE</div>
+                <div class="event-location">Санкт-Петербург</div>
+            </div>
+
+            <div class="event">
+                <div class="event-date">20 МАЯ</div>
+                <div class="event-title">БОЛЬШИЕ ГОНКИ</div>
+                <div class="event-location">Автодром СПб</div>
+            </div>
+
+            <div class="event">
+                <div class="event-date">10-11 ИЮНЯ</div>
+                <div class="event-title">IGORA DRIVE DRIFT CHALLENGE</div>
+                <div class="event-location">Санкт-Петербург</div>
+            </div>
+
+            <!-- Остальные события по аналогии -->
+        </div>
+    </section>
+
+    <script>
+        function toggleInfo(id) {
+            const info = document.getElementById(id);
+            const allPopups = document.querySelectorAll('.info-popup');
+            allPopups.forEach(popup => {
+                if (popup.id !== id) popup.style.display = 'none';
+            });
+
+            if (info.style.display === 'block') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

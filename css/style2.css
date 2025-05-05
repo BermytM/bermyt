@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.car-image-section {
+    flex-basis: 60%; /* Занимает 60% ширины контейнера */
+}
+
+.description-section {
+    flex-basis: 35%; /* Занимает оставшиеся 35% */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+}
+
+.selectable-area {
+    position: absolute;
+    border: 2px dashed #ff0000; /* Красный пунктирный контур */
+    background-color: rgba(255, 0, 0, 0.2); /* Полупрозрачный красный фон */
+    cursor: pointer; /* Курсор в виде руки для интерактивности */
+    transition: background-color 0.3s;
+}
+
+.selectable-area:hover {
+    background-color: rgba(255, 0, 0, 0.5); /* Меняем фон на более яркий при наведении */
+}
