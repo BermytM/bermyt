@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дима Родин | Дрифт-история</title>
+    <style>
+        :root {
+            --red: #E30613;
+            --black: #0F0F0F;
+            --gray: #1A1A1A;
+            --white: #F5F5F5;
+            --neon: #00F0FF;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            margin: 0;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .story-section {
+            min-height: 100vh;
+            padding: 80px 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .story-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .story-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.3;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--red);
+            margin-bottom: 20px;
+        }
+        
+        .intro-text {
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+        
+        .cars-timeline {
+            display: flex;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+        
+        .car-card {
+            flex: 1;
+            min-width: 250px;
+            background: var(--gray);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--red);
+        }
+        
+        .car-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .team-member {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            margin: 50px 0;
+        }
+        
+        .team-member img {
+            width: 200px;
+            border-radius: 50%;
+            border: 3px solid var(--neon);
+        }
+        
+        .badge {
+            display: inline-block;
+            background: var(--neon);
+            color: var(--black);
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .spec-card {
+            background: var(--gray);
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Вступление -->
+    <section class="story-section">
+        <img src="models/dima2.jpeg" alt="Гараж" class="story-bg">
+        <div class="story-content">
+            <h1>Привет, я Дима</h1>
+            <p class="intro-text">
+                Я из города Всеволожска, и вот уже 6 лет я занимаюсь дрифтом. Сейчас я езжу на вот этом звере:
+            </p>
+            <img src="models/sliva4.png" alt="Nissan Silvia S13" style="max-width: 600px; width: 100%; border-radius: 8px;">
+            <p class="intro-text">
+                За прошлый сезон мы с ним побывали (тут перечислить где были)
+            </p>
+        </div>
+    </section>
+    
+    <!-- История машин -->
+    <section class="story-section">
+        <div class="story-content">
+            <h2>Мои железные кони</h2>
+            <div class="cars-timeline">
+                <div class="car-card">
+                    <img src="images/lada.jpg" alt="ВАЗ 2105">
+                    <h3>ВАЗ 2105</h3>
+                    <p>С неё всё началось в 2018. Бюджетно, весело, по-спартански.</p>
+                </div>
+                <div class="car-card">
+                    <img src="images/bmw.jpg" alt="BMW E36">
+                    <h3>BMW E36</h3>
+                    <p>Первый серьёзный дрифт-кар. Научился контролировать занос.</p>
+                </div>
+                <div class="car-card">
+                    <img src="images/s13.jpg" alt="Nissan Silvia S13">
+                    <h3>Nissan Silvia S13</h3>
+                    <p>Моя текущая машина. Полностью переработанный монстр.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Команда -->
+    <section class="story-section">
+        <img src="images/garage-bg-2.jpg" alt="Гараж" class="story-bg">
+        <div class="story-content">
+            <div class="team-member">
+                <img src="images/stas.jpg" alt="Стас">
+                <div>
+                    <h2>А это Стас</h2>
+                    <p>
+                        Мой друг, гоночный менеджер, механик-волшебник, инженер-самоучка, 
+                        тренер по экстремальному вождению и главный по адреналину.
+                    </p>
+                    <div style="margin-top: 20px;">
+                        <span class="badge">Гуру подвески</span>
+                        <span class="badge">Кудесник турбин</span>
+                        <span class="badge">Философ дрифта</span>
+                    </div>
+                    <p style="margin-top: 30px;">
+                        Вместе мы собирали эту машину в нашем гараже. 
+                        <br>Особая благодарность <strong>сервису "М-Кастомс"</strong> за помощь.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Технические характеристики -->
+    <section class="story-section">
+        <div class="story-content">
+            <h2>Текущие характеристики</h2>
+            <p>3-й сезон постоянных улучшений:</p>
+            
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h3>Двигатель</h3>
+                    <p>1JZ-GTE VVTI</p>
+                    <p>450+ л.с. | Garrett GTX3582R</p>
+                </div>
+                <div class="spec-card">
+                    <h3>Подвеска</h3>
+                    <p>D2 Racing Drift Spec</p>
+                    <p>Полностью регулируемая</p>
+                </div>
+                <!-- Остальные спецификации -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Календарь событий -->
+    <section class="story-section">
+        <div class="story-content">
+            <h2>Сезон 2024</h2>
+            <p>Ключевые события, которые мы планируем посетить:</p>
+            
+            <!-- Блок с событиями -->
+        </div>
+    </section>
+    
+    <!-- Призыв к действию -->
+    <section class="story-section" style="text-align: center;">
+        <div class="story-content">
+            <h2>Хочешь поддержать проект?</h2>
+            <p>Твой логотип может появиться на моей машине и в соцсетях</p>
+            <a href="sponsor.html" style="display: inline-block; background: var(--red); color: white; padding: 15px 30px; margin-top: 20px; border-radius: 5px; text-decoration: none;">Стать спонсором</a>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,262 @@
+
+        :root {
+            --bg-color: #2c2c2c;
+            --text-color: #fff;
+            --container-border: #555;
+            --highlight-hover-scale: 1.05;
+            --highlight-opacity: 0.7;
+            --primary-color: #e30613;
+            --form-bg: #3a3a3a;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        #car-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px auto;
+            border: 2px dashed var(--container-border);
+        }
+
+        #car-image {
+            max-width: 2560px;
+            width: 100%;
+            display: block;
+        }
+
+        .highlight {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            opacity: var(--highlight-opacity);
+            transition: all 0.3s ease;
+        }
+
+        .highlight:hover {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(var(--highlight-hover-scale));
+        }
+
+        /* Капот */
+        .bonnet {
+            width: 53%;
+            height: 30%;
+            top: 54%;
+            left: 30.5%;
+            background-color: rgba(0, 255, 0, 0.5);
+            clip-path: polygon(
+                23% 56%, 24% 52%, 30% 44%, 39% 39.5%, 47% 36%, 
+                71% 45%, 81% 50.5%, 67% 54.5%, 58% 61.5%, 54% 68.5%
+            );
+        }
+
+        /* багажник */
+        .trunk {
+            width: 69%;
+            height: 45%;
+            top: 49%;
+            left: 53.5%;
+            background-color: rgb(0 23 255 / 80%);
+            clip-path: polygon(
+                35% 53%, 35% 48%, 32% 42%, 47% 40.5%, 63% 39%, 
+                68% 44%, 68% 49.5%, 58% 51.5%, 57% 55.5%, 46% 56.5%, 46% 52.5%
+            );
+        }
+
+        /* Дверь */
+        .door {
+            width: 41%;
+            height: 38%;
+            top: 56%;
+            left: 55.5%;
+            background-color: rgb(1 0 255 / 50%);
+            clip-path: polygon(
+                52% 51%, 62% 52%, 63% 55%, 63% 66%, 59% 96%, 
+                33% 95%, 34% 84%, 35% 71%, 35% 50%
+            );
+        }
+
+        /* Крыло переднее */
+        .ffender {
+            width: 51%;
+            height: 38%;
+            top: 50.5%;
+            left: 58%;
+            background-color: rgba(166, 255, 0, 0.5);
+            clip-path: polygon(
+                6% 93%, 1% 74%, 5% 69%, 10% 66%, 20% 63%, 
+                30% 64%, 33% 67%, 33% 87%, 32% 98%, 28% 98%, 
+                28% 91%, 26% 82%, 23% 76%, 19% 78%, 15% 86%, 14% 96%
+            );
+        }
+
+        /* Крыло заднее */
+        .rfender {
+            width: 53%;
+            height: 46%;
+            top: 50.5%;
+            left: 84%;
+            background-color: rgba(76, 0, 255, 0.5);
+            clip-path: polygon(
+                5% 90%, 7% 75%, 6% 64%, 11% 64%, 22% 63%, 
+                27% 69%, 27% 80%, 26% 85%, 26% 89%, 26% 95%, 
+                23% 94%, 23% 84%, 21% 79%, 17% 79%, 14% 88%, 13% 93%
+            );
+        }
+
+        /* Бампер */
+        .fbumper {
+            width: 34%;
+            height: 36%;
+            top: 59.5%;
+            left: 29%;
+            background-color: rgba(255, 0, 234, 0.5);
+            clip-path: polygon(
+                0% 79%, 4% 71%, 5% 49%, 9% 48%, 67% 62%, 
+                70% 70%, 81% 73%, 79% 88%, 81% 101%
+            );
+        }
+
+        /* Задний Бампер */
+        .rbumper {
+            width: 59%;
+            height: 51%;
+            top: 44.5%;
+            left: 57%;
+            background-color: rgb(77 255 0 / 78%);
+            clip-path: polygon(
+                15% 84%, 15% 76%, 21% 77%, 20% 70%, 69% 68%, 
+                70% 75%, 69% 81%, 66% 82%, 43% 84%, 24% 85%
+            );
+        }
+
+        /* Порог */
+        .threshold {
+            width: 40%;
+            height: 36%;
+            top: 66.5%;
+            left: 59%;
+            background-color: rgba(8, 147, 228, 0.5);
+            clip-path: polygon(
+                18% 81%, 18% 71%, 20% 57%, 25% 56%, 24% 68%, 
+                50% 70%, 54% 58%, 64% 59%, 62% 73%, 63% 85%
+            );
+        }
+
+        #pricing-options {
+            background-color: #3a3a3a;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 20px auto;
+        }
+
+        .option {
+            background: rgba(30,30,30,0.7);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .select-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .select-btn:hover {
+            background: #c00511;
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--form-bg);
+            padding: 25px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close-modal:hover {
+            color: white;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #555;
+            background: #2c2c2c;
+            color: white;
+        }
+
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #c00511;
+        }
+
+        .selected-info {
+            background: rgba(227,6,19,0.2);
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 3px solid var(--primary-color);
+        }

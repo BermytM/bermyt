@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дима Родин | Официальный сайт дрифтера</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <section class="hero">
+        <!-- Фон - только машина -->
+        <img src="models/sliva4.png" alt="Дрифт-кар" class="hero-bg">
+        
+        <div class="hero-content">
+            <!-- Фото Димы слева -->
+            <div class="driver-photo">
+                <a href="https://www.instagram.com/rozetko/">
+                    <img src="models/dima5.jpg" alt="Дима Родин" class="driver-img">
+                  </a>
+            </div>
+            
+            <!-- Текст справа -->
+            <div class="hero-text">
+                <h1>Привет, меня зовут Дима</h1>
+                <p class="intro-text">
+                    Я из города Всеволожск, дрифтую с 2018 года<br>
+                    Сейчас выступаю на Nissan Silvia S13 с мотором 1JZ-GTE VVTI (300 л.с.)
+                </p>
+                
+                <div class="achievements">
+                    <h2>Вот ближайшие мероприятия которые я посещу в этом сезоне:</h2>
+                    <ul>
+                    <li>Igora Drive Drift Challenge (Санкт-Петербург) 10-11.05</li>
+                    <li>Igora Drive Drift Challenge (Санкт-Петербург) 28-29.06</li>
+                    <li>Igora Drive Drift Challenge (Санкт-Петербург) 9-10.08</li>
+                    <li>Igora Drive Drift Challenge (Санкт-Петербург) 20-21.09</li>
+                    </ul>
+                </div>
+                
+                <p class="intro-text">
+                    Если хочешь поддержать меня, переходи по ссылке ниже, у меня для тебя есть предложения по сотрудничеству
+                </p>
+                <a href="https://www.donationalerts.com/r/rozetko" class="btn">Просто дать бабок</a>
+           
+                <a href="sponsor.html" class="btn">Купить рекламное место на авто</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section">
+        <h2 style="text-align: center;">Моя история</h2>
+        <div class="gallery">
+            <!-- стрелки -->
+            <button id="prev" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+            <button id="next" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+          
+            <!-- Главное изображение -->
+            <div class="main-image">
+              <img id="current-img" src="models/sliva6.jpg" alt="Слива" />
+            </div>
+            <!-- Описание -->
+            <div class="description" id="photo-desc"><p>Описание 1</p></div>
+            <!-- Точки -->
+            <div class="indicators" id="indicators"></div>
+            <!-- Общее число фото -->
+            <div class="total-count">Всего фото: <span id="total"></span></div>
+          </div>
+
+              <script>
+  const imagesData = [
+  { src: 'models/st2.jpg', desc: 'Это была первая Жига за 20 тысяч рублей — гнилая, косая, с кривыми доками, не на ходу, но она была наша. До гаража тащили на тросу.' },
+  { src: 'models/st3.jpg', desc: 'По окончании сезона решили купить живой аппарат, который обошелся в 50 тысяч. Уже планы были серьезные.' },
+  { src: 'models/st1.jpg', desc: 'Первая квалификация, которую удалось взять.' },
+  { src: 'models/st4.jpg', desc: 'Тут тоже что-то победили.' },
+  { src: 'models/st5.jpg', desc: 'Полетели в Курск, там купили BMW Touring E36, проехали на корче 1200 километров до дома и начали катать летом.' },
+  { src: 'models/st6.1.jpg', desc: 'Первые соревнования на зимней резине с помойки и 193-мя лошадьми под капотом.' },
+  { src: 'models/st6.jpg', desc: 'Выковыривали остатки шипов.' },
+  { src: 'models/st7.jpg', desc: 'Качали 5 очков в колеса — даже дымили иногда.' },
+  { src: 'models/st8.jpg', desc: 'Потом решили купить новое сердце для BMW.' },
+  { src: 'models/st9.jpg', desc: 'Но судьба распорядилась иначе — оно застучало в другой машине.' },
+  { src: 'models/st10.jpg', desc: 'И вот — S13, уже третий сезон в соревнованиях.' }
+]
+  ;
+
+  const totalPhotos = imagesData.length;
+  document.getElementById('total').textContent = totalPhotos;
+
+  const currentImg = document.getElementById('current-img');
+  const desc = document.getElementById('photo-desc');
+
+  let currentIndex = 0;
+
+  // Изначально показываем первое фото
+  currentImg.src = imagesData[0].src;
+  desc.innerHTML = `<p>${imagesData[0].desc}</p>`;
+
+  // Обработка клика по изображению — переключение на следующее
+  currentImg.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % imagesData.length;
+    updateGallery(currentIndex);
+  });
+
+  // Обработчики стрелок
+  document.getElementById('prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + imagesData.length) % imagesData.length;
+    updateGallery(currentIndex);
+  });
+  document.getElementById('next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % imagesData.length;
+    updateGallery(currentIndex);
+  });
+
+  // Точки — тоже можно оставить
+  const indicatorsContainer = document.getElementById('indicators');
+  imagesData.forEach((_, index) => {
+    const dot = document.createElement('div');
+    dot.className = 'indicator' + (index === 0 ? ' active' : '');
+    dot.dataset.index = index;
+    indicatorsContainer.appendChild(dot);
+  });
+  const dots = document.querySelectorAll('.indicator');
+
+  function updateGallery(index) {
+    currentImg.src = imagesData[index].src;
+    desc.innerHTML = `<p>${imagesData[index].desc}</p>`;
+    dots.forEach(d => d.classList.remove('active'));
+    dots[index].classList.add('active');
+  }
+
+  // Клик по точкам
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      updateGallery(parseInt(dot.dataset.index));
+    });
+  });
+</script>
+
+<br><br> 
+
+        <div class="car-profile">
+            <h2 style="text-align: center;">Это МОЯ машина</h2>
+            <div class="car-image">
+              <img src="models/sliva6.jpg" alt="Машина">
+              <div class="overlay">
+                <!-- Левая колонка с кнопками -->
+                <div class="buttons-container left">
+                  <button data-desc="desc1">Двигатель</button>
+                  <button data-desc="desc2">Подвеска</button>
+                  <button data-desc="desc3">Трансмиссия</button>
+                </div>
+                <!-- Центр с описанием -->
+                <div class="description-center" id="description">
+                  <div id="desc1" class="desc active">
+                    <h3>1jz gte vvti</h3>
+                    <p>300 лс</p>
+                  </div>
+                  <div id="desc2" class="desc" style="display:none;">
+                    <h3>Подвеска</h3>
+                    <p>D2 Racing drift</p>
+                  </div>
+                  <div id="desc3" class="desc" style="display:none;">
+                    <h3>Трансмиссия</h3>
+                    <p>oofkos custom</p>
+                  </div>
+                  <div id="desc4" class="desc" style="display:none;">
+                    <h3>ECU</h3>
+                    <p>Сток</p>
+                  </div>
+                  <div id="desc5" class="desc" style="display:none;">
+                    <h3>Остальное</h3>
+                    <p>кпп: bmw gs6 37dz</p>
+                  </div>
+                  <div id="desc6" class="desc" style="display:none;">
+                    <h3>Обвес</h3>
+                    <p>bn-sports blisterwide</p>
+                  </div>
+                </div>
+                <!-- Правая колонка с кнопками -->
+                <div class="buttons-container right">
+                  <button data-desc="desc4">ECU</button>
+                  <button data-desc="desc5">Остальное</button>
+                  <button data-desc="desc6">Обвес</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <script>
+  document.querySelectorAll('.car-profile .overlay button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      // скрываем все описания
+      document.querySelectorAll('#description .desc').forEach(d => {
+        d.style.display = 'none';
+      });
+      // показываем выбранное описание
+      const descId = btn.getAttribute('data-desc');
+      document.getElementById(descId).style.display = 'block';
+    });
+  });
+</script>
+
+       
+<br><br> 
+        <div class="card" id="events">
+
+            <h2 style="text-align: center;">Календарь сезона 2023</h2>
+
+            <div class="event">
+                <div class="event-date">6-7 МАЯ</div>
+                <div class="event-title">IGORA DRIVE DRIFT CHALLENGE</div>
+                <div class="event-location">Санкт-Петербург</div>
+            </div>
+
+            <div class="event">
+                <div class="event-date">20 МАЯ</div>
+                <div class="event-title">БОЛЬШИЕ ГОНКИ</div>
+                <div class="event-location">Автодром СПб</div>
+            </div>
+
+            <div class="event">
+                <div class="event-date">10-11 ИЮНЯ</div>
+                <div class="event-title">IGORA DRIVE DRIFT CHALLENGE</div>
+                <div class="event-location">Санкт-Петербург</div>
+            </div>
+
+            <!-- Остальные события по аналогии -->
+        </div>
+    </section>
+
+    <script>
+        function toggleInfo(id) {
+            const info = document.getElementById(id);
+            const allPopups = document.querySelectorAll('.info-popup');
+            allPopups.forEach(popup => {
+                if (popup.id !== id) popup.style.display = 'none';
+            });
+
+            if (info.style.display === 'block') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
