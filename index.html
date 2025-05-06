@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дима Родин | Официальный сайт дрифтера</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="hero">
+        <!-- Фон - только машина -->
+        <img src="models/sliva4.png" alt="Дрифт-кар" class="hero-bg">
+        
+        <div class="hero-content">
+            <!-- Фото Димы слева -->
+            <div class="driver-photo">
+                <img src="models/dima3.jpeg" alt="Дима Родин" class="driver-img">
+            </div>
+            
+            <!-- Текст справа -->
+            <div class="hero-text">
+                <h1>Привет, меня зовут Дима</h1>
+                <p class="intro-text">
+                    Я из города Всеволожск, дрифтую с 2018 года<br>
+                    Сейчас выступаю на Nissan Silvia S13 с мотором 1JZ-GTE VVTI (300 л.с.)
+                </p>
+                
+                <div class="achievements">
+                    <h2>Вот ближайшие мероприятиякоторые я посещу в этом сезоне:</h2>
+                    <ul>
+                    <li>Igora Drive Drift Challenge (Санкт-Петербург) 10-11.05</li>
+                    <li>Igora Drive Drift Challenge (Санкт-Петербург) 28-29.06</li>
+                    <li>Igora Drive Drift Challenge (Санкт-Петербург) 9-10.08</li>
+                    <li>Igora Drive Drift Challenge (Санкт-Петербург) 20-21.09</li>
+                    </ul>
+                </div>
+                
+                <p class="intro-text">
+                    Если хочешь поддержать меня, переходи по ссылке ниже, у меня для тебя есть предложения по сотрудничеству
+                </p>
+                
+                <a href="sponsor.html" class="btn">Стать спонсором</a>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="card">
+            <h2 style="text-align: center;">Моя история</h2>
+            <p>Специализируюсь на зимнем дрифте - это моя стихия. Уже успел заявить о себе:</p>
+            <ul>
+                <li>Призер Winter Training Challenge 2021</li>
+                <li>Победитель Winter Drift Cup 2022</li>
+            </ul>
+            <p>Сейчас работаю над стабильностью результатов для перехода в профессиональную лигу.</p>
+        </div>
+
+       
+
+        <div class="card" id="events">
+            <h2 style="text-align: center;">Календарь сезона 2023</h2>
+
+            <div class="event">
+                <div class="event-date">6-7 МАЯ</div>
+                <div class="event-title">IGORA DRIVE DRIFT CHALLENGE</div>
+                <div class="event-location">Санкт-Петербург</div>
+            </div>
+
+            <div class="event">
+                <div class="event-date">20 МАЯ</div>
+                <div class="event-title">БОЛЬШИЕ ГОНКИ</div>
+                <div class="event-location">Автодром СПб</div>
+            </div>
+
+            <div class="event">
+                <div class="event-date">10-11 ИЮНЯ</div>
+                <div class="event-title">IGORA DRIVE DRIFT CHALLENGE</div>
+                <div class="event-location">Санкт-Петербург</div>
+            </div>
+
+            <!-- Остальные события по аналогии -->
+        </div>
+    </section>
+
+    <script>
+        function toggleInfo(id) {
+            const info = document.getElementById(id);
+            const allPopups = document.querySelectorAll('.info-popup');
+            allPopups.forEach(popup => {
+                if (popup.id !== id) popup.style.display = 'none';
+            });
+
+            if (info.style.display === 'block') {
+                info.style.display = 'none';
+            } else {
+                info.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
