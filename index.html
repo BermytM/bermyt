@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Дима Родин | Официальный сайт дрифтера</title>
+    <!-- Подключение основного стиля -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Подключение иконок Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <!-- Раздел "Hero" - главный баннер с фоном и информацией -->
+    <section class="hero">
+        <!-- Фон - только машина -->
+        <img src="models/sliva4.png" alt="Дрифт-кар" class="hero-bg" />
+
+        <div class="hero-content">
+            <!-- Фото Димы слева -->
+            <div class="driver-photo">
+                <a href="https://www.instagram.com/rozetko/">
+                    <img src="models/dima5.jpg" alt="Дима Родин" class="driver-img" />
+                </a>
+            </div>
+
+            <!-- Текстовая часть справа -->
+            <div class="hero-text">
+                <h1>Привет, меня зовут Дима</h1>
+                <p class="intro-text">
+                    Я из города Всеволожск, дрифтую с 2018 года<br>
+                    Сейчас выступаю на Nissan Silvia S13 с мотором 1JZ-GTE VVTI (300 л.с.)
+                </p>
+
+                <!-- Блок с мероприятиями -->
+                <div class="achievements">
+                    <h2>Вот ближайшие мероприятия которые я посещу в этом сезоне:</h2>
+                    <ul>
+                        <li>Igora Drive Drift Challenge (Санкт-Петербург) 10-11.05</li>
+                        <li>Igora Drive Drift Challenge (Санкт-Петербург) 28-29.06</li>
+                        <li>Igora Drive Drift Challenge (Санкт-Петербург) 9-10.08</li>
+                        <li>Igora Drive Drift Challenge (Санкт-Петербург) 20-21.09</li>
+                    </ul>
+                </div>
+
+                <!-- Призыв к поддержке -->
+                <p class="intro-text">
+                    Если хочешь поддержать меня, переходи по ссылке ниже, у меня для тебя есть предложения по сотрудничеству
+                </p>
+                <!-- Кнопки -->
+                <a href="https://www.donationalerts.com/r/rozetko" class="btn">Просто дать бабок</a>
+                <a href="sponsor.html" class="btn">Купить рекламное место на авто</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел "Моя история" -->
+    <section class="section">
+        <h2 style="text-align: center;">Моя история</h2>
+
+        <!-- Галерея с изображениями и навигацией -->
+        <div class="gallery">
+            <!-- Стрелки навигации -->
+            <button id="prev" class="nav-btn"><i class="fas fa-chevron-left"></i></button>
+            <button id="next" class="nav-btn"><i class="fas fa-chevron-right"></i></button>
+
+            <!-- Основное изображение -->
+            <div class="main-image">
+                <img id="current-img" src="models/sliva6.jpg" alt="Слива" />
+            </div>
+
+            <!-- Описание текущего фото -->
+            <div class="description" id="photo-desc"><p>Описание 1</p></div>
+
+            <!-- Точки-индикаторы -->
+            <div class="indicators" id="indicators"></div>
+
+            <!-- Общее число фото -->
+            <div class="total-count">Всего фото: <span id="total"></span></div>
+        </div>
+
+<!-- Раздел "Моя команда" -->
+<section class="team">
+  <h2 style="text-align: center;">Моя команда</h2>
+  <div class="team-slider-container">
+    <button class="slider-btn prev">&lt;</button>
+    <div class="team-slider-wrapper">
+      <div class="team-slider">
+        <!-- Карточки участников -->
+        <div class="team-member">
+          <img src="models/stas1.jpg" alt="Гоночный менеджер" class="member-photo" />
+          <h3>Стас</h3>
+          <p>Гоночный менеджер — решает все вопросы по организации</p>
+        </div>
+        <div class="team-member">
+          <img src="models/stas2.jpg" alt="Механик-инженер" class="member-photo" />
+          <h3>Стас</h3>
+          <p>Механик-инженер — делает так, чтобы машина всегда ехала, разрабатывает все улучшения по машине</p>
+        </div>
+        <div class="team-member">
+          <img src="models/stas3.jpg" alt="Споттер" class="member-photo" />
+          <h3>Стас</h3>
+          <p>Споттер — следит за гонкой, подсказывает во время заездов</p>
+        </div>
+        <div class="team-member">
+          <img src="models/stas4.jpg" alt="Маляр-кузовщик" class="member-photo" />
+          <h3>Стас</h3>
+          <p>Маляр-кузовщик — делает машину всегда была красивой</p>
+        </div>
+      </div>
+    </div>
+    <button class="slider-btn next">&gt;</button>
+  </div>
+</section>
+
+        <br><br>
+
+        <!-- Раздел "Это МОЯ машина" -->
+        <h2 style="text-align: center;">Это МОЯ машина</h2>
+        <div class="car-profile">
+            <!-- Фото машины с наложением -->
+            <div class="car-image">
+                <img src="models/sliva6.jpg" alt="Машина" />
+
+                <!-- Оверлей с кнопками и описаниями -->
+                <div class="overlay">
+                    <!-- Левая колонка кнопок -->
+                    <div class="buttons-container left">
+                        <button data-desc="desc1">Двигатель</button>
+                        <button data-desc="desc2">Подвеска</button>
+                        <button data-desc="desc3">Трансмиссия</button>
+                    </div>
+
+                    <!-- Центр с описаниями -->
+                    <div class="description-center" id="description">
+                        <div id="desc1" class="desc active">
+                            <h3>1jz gte vvti</h3>
+                            <p>300 лс</p>
+                        </div>
+                        <div id="desc2" class="desc" style="display:none;">
+                            <h3>Подвеска</h3>
+                            <p>D2 Racing drift</p>
+                        </div>
+                        <div id="desc3" class="desc" style="display:none;">
+                            <h3>Трансмиссия</h3>
+                            <p>oofkos custom</p>
+                        </div>
+                        <!-- Можно добавить дополнительные описания -->
+                        <div id="desc4" class="desc" style="display:none;">
+                            <h3>ECU</h3>
+                            <p>Сток</p>
+                        </div>
+                        <div id="desc5" class="desc" style="display:none;">
+                            <h3>Остальное</h3>
+                            <p>кпп: bmw gs6 37dz</p>
+                        </div>
+                        <div id="desc6" class="desc" style="display:none;">
+                            <h3>Обвес</h3>
+                            <p>bn-sports blisterwide</p>
+                        </div>
+                    </div>
+
+                    <!-- Правая колонка кнопок -->
+                    <div class="buttons-container right">
+                        <button data-desc="desc4">ECU</button>
+                        <button data-desc="desc5">Остальное</button>
+                        <button data-desc="desc6">Обвес</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+
+<!-- Календарь сезона -->
+<h2 style="text-align: center;">Календарь событий</h2>
+<div class="card" id="events">
+  <div class="calendar">
+    <h3 style="text-align:center;">2023</h3>
+    <div class="dates">
+      <!-- Пример дат, можно добавить все нужные -->
+      <div class="date" data-date="6-7 МАЯ" data-info="IGORA DRIVE DRIFT CHALLENGE, Санкт-Петербург, 6-7 мая. Подробнее: <a href='https://example.com/igora-may' target='_blank'>ссылка</a>.">6-7 МАЯ</div>
+      <div class="date" data-date="20 МАЯ" data-info="БОЛЬШИЕ ГОНКИ, Автодром СПб, 20 мая. Подробнее: <a href='https://example.com/bolshie-gonki' target='_blank'>ссылка</a>.">20 МАЯ</div>
+      <div class="date" data-date="10-11 ИЮНЯ" data-info="IGORA DRIVE DRIFT CHALLENGE, Санкт-Петербург, 10-11 июня. Подробнее: <a href='https://example.com/igora-june' target='_blank'>ссылка</a>.">10-11 ИЮНЯ</div>
+      <!-- Можно добавить остальные даты -->
+    </div>
+    <h3 style="text-align:center;">2023</h3>
+    <div class="dates">
+      <!-- Пример дат, можно добавить все нужные -->
+      <div class="date" data-date="6-7 МАЯ" data-info="IGORA DRIVE DRIFT CHALLENGE, Санкт-Петербург, 6-7 мая. Подробнее: <a href='https://example.com/igora-may' target='_blank'>ссылка</a>.">6-7 МАЯ</div>
+      <div class="date" data-date="20 МАЯ" data-info="БОЛЬШИЕ ГОНКИ, Автодром СПб, 20 мая. Подробнее: <a href='https://example.com/bolshie-gonki' target='_blank'>ссылка</a>.">20 МАЯ</div>
+      <div class="date" data-date="10-11 ИЮНЯ" data-info="IGORA DRIVE DRIFT CHALLENGE, Санкт-Петербург, 10-11 июня. Подробнее: <a href='https://example.com/igora-june' target='_blank'>ссылка</a>.">10-11 ИЮНЯ</div>
+      <!-- Можно добавить остальные даты -->
+    </div>
+    <h3 style="text-align:center;">2023</h3>
+    <div class="dates">
+      <!-- Пример дат, можно добавить все нужные -->
+      <div class="date" data-date="6-7 МАЯ" data-info="IGORA DRIVE DRIFT CHALLENGE, Санкт-Петербург, 6-7 мая. Подробнее: <a href='https://example.com/igora-may' target='_blank'>ссылка</a>.">6-7 МАЯ</div>
+      <div class="date" data-date="20 МАЯ" data-info="БОЛЬШИЕ ГОНКИ, Автодром СПб, 20 мая. Подробнее: <a href='https://example.com/bolshie-gonki' target='_blank'>ссылка</a>.">20 МАЯ</div>
+      <div class="date" data-date="10-11 ИЮНЯ" data-info="IGORA DRIVE DRIFT CHALLENGE, Санкт-Петербург, 10-11 июня. Подробнее: <a href='https://example.com/igora-june' target='_blank'>ссылка</a>.">10-11 ИЮНЯ</div>
+      <!-- Можно добавить остальные даты -->
+    </div>
+  </div>
+  
+  <!-- Блок с подробной информацией -->
+  <div id="event-details" style="margin-top:20px; padding:10px; border:1px solid #ccc; min-height:50px;">
+    <em>Выберите дату для просмотра информации</em>
+  </div>
+
+  <!-- Можно добавить остальные события аналогично -->
+</div>
+
+    <!-- Подключение основного JS файла -->
+    <script src="js/main.js"></script>
+</body>
+</html>
